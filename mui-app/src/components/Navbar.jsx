@@ -13,8 +13,20 @@ const Search = styled("div")(({ theme }) => ({
   width: "40%"
 }));
 const Icon = styled(Box)(({ theme }) => ({
-  display: "flex", gap: "20px" , alignItems: "center"
+  display: "none", gap: "20px", alignItems: "center",
+  [theme.breakpoints.up("sm")]:{
+    display:"flex"
+  }
 }));
+
+const UserBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",
+  [theme.breakpoints.up("sm")]:{
+    display:"none"
+  }
+}))
 export default function Navbar() {
   return (
     <AppBar position='sticky'>
@@ -31,7 +43,11 @@ export default function Navbar() {
   <Notifications/>
           </Badge>
           <Avatar sx={{width:30, height:30}} src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
-    </Icon>
+        </Icon>
+        <UserBox>
+          <Avatar sx={{ width: 30, height: 30 }} src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+          <Typography variant='span'>Rando</Typography>
+        </UserBox>
     </StyledToolbar>
     </AppBar>
   )
