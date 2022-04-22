@@ -1,6 +1,6 @@
 import { Mail, Notifications, Person } from '@mui/icons-material'
-import { AppBar, Avatar, Badge, Box, InputBase, styled, Toolbar, Typography } from '@mui/material'
-import React from 'react'
+import { AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, styled, Toolbar, Typography } from '@mui/material'
+import React, { useState } from 'react'
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -27,7 +27,11 @@ const UserBox = styled(Box)(({ theme }) => ({
     display:"none"
   }
 }))
+
 export default function Navbar() {
+
+  const [open, setOpen] = useState(false)
+
   return (
     <AppBar position='sticky'>
       <StyledToolbar>
@@ -42,13 +46,33 @@ export default function Navbar() {
           <Badge badgeContent={2} color="error">
   <Notifications/>
           </Badge>
-          <Avatar sx={{width:30, height:30}} src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"/>
+          <Avatar sx={{ width: 30, height: 30 }} src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          onClick={e=>setOpen(true)}
+          />
         </Icon>
-        <UserBox>
+        <UserBox onClick={e=>setOpen(true)}>
           <Avatar sx={{ width: 30, height: 30 }} src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
           <Typography variant='span'>Rando</Typography>
         </UserBox>
-    </StyledToolbar>
+      </StyledToolbar>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={e=>setOpen(false)}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        <MenuItem >Profile</MenuItem>
+        <MenuItem >My account</MenuItem>
+        <MenuItem >Logout</MenuItem>
+      </Menu>
     </AppBar>
   )
 }
