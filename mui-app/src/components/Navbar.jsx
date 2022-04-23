@@ -4,7 +4,8 @@ import React, { useState } from 'react'
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
-  justifyContent: "space-between"
+  justifyContent: "space-between",
+  backgroundColor:"#023047"
 });
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: "white",
