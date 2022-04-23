@@ -29,8 +29,9 @@ const UserBox = styled(Box)(({ theme }) => ({
 }))
 
 export default function Navbar() {
-
+// for the profile pic menu
   const [open, setOpen] = useState(false)
+// for the profile pic menu
 
   return (
     <AppBar position='sticky'>
