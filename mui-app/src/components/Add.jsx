@@ -60,9 +60,10 @@ export default function Add() {
         <Box
           width={400}
           height={280}
-          backgroundColor="white"
           padding={3}
           borderRadius={5}
+          backgroundColor={"background.default"}
+          color={"text.primary"}
         >
           <Typography variant="h6" color="gray" textAlign="center">
             Create Post
@@ -96,8 +97,7 @@ export default function Add() {
             aria-label=" outlined primary button group"
           >
             <Button>Post</Button>
-            <Button sx={{width:"100px"}}>
-              
+            <Button sx={{ width: "100px" }}>
               <DateRange />
             </Button>
           </ButtonGroup>
