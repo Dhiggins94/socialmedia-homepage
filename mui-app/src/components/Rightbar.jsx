@@ -2,8 +2,13 @@ import {
   Avatar,
   AvatarGroup,
   Box,
+  Divider,
   ImageList,
   ImageListItem,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -11,16 +16,15 @@ import React from "react";
 export default function Rightbar() {
   return (
     <Box
-      bgcolor="lightcoral"
       flex={2}
       padding={2}
       sx={{ display: { xs: "none", sm: "block" } }}
     >
-      <Box position="fixed" width={200}>
-        <Typography variant="h6" fontWeight={100} marginTop={2} marginBottom={2}>
+      <Box position="fixed" width={300}>
+        <Typography variant="h6" fontWeight={100} mt={2} mb={2}>
           Online Friends
         </Typography>
-        <AvatarGroup max={3}>
+        <AvatarGroup max={4}>
           <Avatar
             alt="Aaliyah"
             src="https://images.pexels.com/photos/1820919/pexels-photo-1820919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -65,9 +69,87 @@ export default function Rightbar() {
             />
           </ImageListItem>
         </ImageList>
-        <Typography variant="h6" fontWeight={100} marginTop={2} marginBottom={2}>
+        <Typography variant="h6" fontWeight={100} mt={2}>
           Latest Conversations
         </Typography>
+        <List
+          sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+        >
+          <ListItem alignItems="flex-start">
+            <ListItemAvatar>
+              <Avatar
+                alt="Remy Sharp"
+                src="https://images.pexels.com/photos/3656518/pexels-photo-3656518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              />
+            </ListItemAvatar>
+            <ListItemText
+              primary="Brunch this weekend?"
+              secondary={
+                <>
+                  <Typography
+                    sx={{ display: "inline" }}
+                    component="span"
+                    variant="body2"
+                    color="text.primary"
+                  >
+                    Ali Connors
+                  </Typography>
+                  {" — I'll be in your neighborhood doing errands this…"}
+                </>
+              }
+            />
+          </ListItem>
+          <Divider variant="inset" component="li" />
+          <ListItem alignItems="flex-start">
+            <ListItemAvatar>
+              <Avatar
+                alt="Travis Howard"
+                src="https://images.pexels.com/photos/1182238/pexels-photo-1182238.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              />
+            </ListItemAvatar>
+            <ListItemText
+              primary="Summer BBQ"
+              secondary={
+                <>
+                  <Typography
+                    sx={{ display: "inline" }}
+                    component="span"
+                    variant="body2"
+                    color="text.primary"
+                  >
+                    to Scott, Alex, Jennifer
+                  </Typography>
+                  {" — Wish I could come, but I'm out of town this…"}
+                </>
+              }
+            />
+          </ListItem>
+          <Divider variant="inset" component="li" />
+          <ListItem alignItems="flex-start">
+            <ListItemAvatar>
+              <Avatar
+                alt="Cindy Baker"
+                src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              />
+            </ListItemAvatar>
+            <ListItemText
+              primary="Oui Oui"
+              secondary={
+                <>
+                  <Typography
+                    sx={{ display: "inline" }}
+                    component="span"
+                    variant="body2"
+                    color="text.primary"
+                  >
+                    Sandra Adams
+                  </Typography>
+                  {" — Do you have Paris recommendations? Have you ever…"}
+                </>
+              }
+            />
+          </ListItem>
+        </List>
       </Box>
     </Box>
   );
