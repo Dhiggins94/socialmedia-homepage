@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import React from "react";
 
-export default function () {
+export default function Post() {
   return (
     <Card sx={{ margin: 5 }}>
       <CardHeader
