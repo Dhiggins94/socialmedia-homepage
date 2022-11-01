@@ -45,7 +45,7 @@ export default function Add() {
           bottom: 20,
           left: { xs: "calc(50% - 25px)", md: 30 },
         }}
-        title="Delete"
+        title="Post"
       >
         <Fab color="primary" aria-label="add">
           <AddIcon />
